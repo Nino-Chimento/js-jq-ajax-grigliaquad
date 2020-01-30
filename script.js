@@ -6,6 +6,9 @@ $(document).ready(function () {
   for (var i = 0; i < 36; i++) {
     $(".container").append(html)
   }
+  for (var i = 0; i < 36; i++) {
+    $(".container2").append(html)
+  }
   $(document).on("click",".container div",function () {
     var div = $(this);
     $.ajax(
@@ -13,18 +16,15 @@ $(document).ready(function () {
       url: "https://flynn.boolean.careers/exercises/api/random/int",
       method: "GET",
       success: function (data, stato) {
-         console.log(data.response);
          if (div.text().length != 0) {
            alert("hai gia cliaccato su questo div")
          }
          else if (parseInt(data.response)<= 5) {
-           console.log("il numero e inferiore a 5");
            div.addClass("yellow");
            div.text("")
            div.append(data.response);
          }
          else {
-           console.log("il numero e maggiroe di 5");
             div.addClass("green")
             div.text("")
             div.append(data.response);
