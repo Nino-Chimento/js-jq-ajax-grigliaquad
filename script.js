@@ -15,6 +15,7 @@ $(document).ready(function () {
          console.log(data.response);
          if (parseInt(data.response)<= 5) {
            console.log("il numero e inferiore a 5");
+           $(this).addClass("yellow")
          }
          else {
            console.log("il numero e maggiroe di 5");
