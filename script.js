@@ -6,4 +6,7 @@ $(document).ready(function () {
   for (var i = 0; i < 36; i++) {
     $(".container").append(html)
   }
+  $(document).on("click",".container div",function () {
+    console.log("N");
+  })
 });
