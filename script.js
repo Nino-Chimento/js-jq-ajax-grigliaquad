@@ -19,6 +19,7 @@ $(document).ready(function () {
          }
          else {
            console.log("il numero e maggiroe di 5");
+            $(this).addClass("green")
          }
       },
       error: function (richiesta, stato, errori) {
