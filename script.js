@@ -13,6 +13,12 @@ $(document).ready(function () {
       method: "GET",
       success: function (data, stato) {
          console.log(data.response);
+         if (parseInt(data.response)<= 5) {
+           console.log("il numero e inferiore a 5");
+         }
+         else {
+           console.log("il numero e maggiroe di 5");
+         }
       },
       error: function (richiesta, stato, errori) {
          alert("E' avvenuto un errore. " + errori);
