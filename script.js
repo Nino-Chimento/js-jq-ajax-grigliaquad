@@ -7,6 +7,17 @@ $(document).ready(function () {
     $(".container").append(html)
   }
   $(document).on("click",".container div",function () {
-    console.log("N");
+    $.ajax(
+{
+url: "https://flynn.boolean.careers/exercises/api/random/int",
+method: "GET",
+success: function (data, stato) {
+  console.log(data.response);
+},
+error: function (richiesta, stato, errori) {
+   alert("E' avvenuto un errore. " + errori);
+}
+}
+);
   })
 });
