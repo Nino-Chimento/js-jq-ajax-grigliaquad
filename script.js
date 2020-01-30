@@ -35,4 +35,31 @@ $(document).ready(function () {
       }
     });
   })
+  $(document).on("click",".container2 div",function () {
+    var div = $(this);
+    var parolaUtente = prompt("inserisci una parola");
+    console.log(parolaUtente.length);
+    while (parolaUtente.length == 0) {
+      parolaUtente = prompt("inserisci una parola");
+    }
+    $.ajax({
+      url : "https://flynn.boolean.careers/exercises/api/random/word",
+      method: "GET",
+      success: function(data) {
+        if (data.response.length > parolaUtente.length) {
+          div.append(data.response)
+        }
+        else if (data.response.length < parolaUtente.length) {
+          div.append(parolaUtente);
+        }
+        else {
+          alert("le parole sono simili");
+          div.append(data.response +" "+parolaUtente )
+        }
+      },
+      error :function (errore) {
+        alert("si e verificato il segunte errore" + errore)
+      }
+    });
+  })
 });
