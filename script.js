@@ -7,6 +7,7 @@ $(document).ready(function () {
     $(".container").append(html)
   }
   $(document).on("click",".container div",function () {
+    var div = $(this);
     $.ajax(
     {
       url: "https://flynn.boolean.careers/exercises/api/random/int",
@@ -15,11 +16,13 @@ $(document).ready(function () {
          console.log(data.response);
          if (parseInt(data.response)<= 5) {
            console.log("il numero e inferiore a 5");
-           $(this).addClass("yellow")
+           div.addClass("yellow");
+           div.append(data.response);
          }
          else {
            console.log("il numero e maggiroe di 5");
-            $(this).addClass("green")
+            div.addClass("green")
+            div.append(data.response);
          }
       },
       error: function (richiesta, stato, errori) {
