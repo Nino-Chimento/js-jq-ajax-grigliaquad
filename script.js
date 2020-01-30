@@ -17,11 +17,13 @@ $(document).ready(function () {
          if (parseInt(data.response)<= 5) {
            console.log("il numero e inferiore a 5");
            div.addClass("yellow");
+           div.text(" ")
            div.append(data.response);
          }
          else {
            console.log("il numero e maggiroe di 5");
             div.addClass("green")
+            div.text(" ")
             div.append(data.response);
          }
       },
