@@ -8,16 +8,15 @@ $(document).ready(function () {
   }
   $(document).on("click",".container div",function () {
     $.ajax(
-{
-url: "https://flynn.boolean.careers/exercises/api/random/int",
-method: "GET",
-success: function (data, stato) {
-  console.log(data.response);
-},
-error: function (richiesta, stato, errori) {
-   alert("E' avvenuto un errore. " + errori);
-}
-}
-);
+    {
+      url: "https://flynn.boolean.careers/exercises/api/random/int",
+      method: "GET",
+      success: function (data, stato) {
+         console.log(data.response);
+      },
+      error: function (richiesta, stato, errori) {
+         alert("E' avvenuto un errore. " + errori);
+      }
+    });
   })
 });
